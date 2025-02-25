@@ -1,0 +1,60 @@
+Introduction
+
+Async/Await is a modern way to handle asynchronous operations in JavaScript. It simplifies working with promises, making asynchronous code look and behave more like synchronous code.
+
+Why Use Async/Await?
+
+Makes asynchronous code easier to read and write.
+
+Avoids callback hell.
+
+Provides better error handling using try/catch.
+
+How It Works
+
+1. Async Function
+
+A function declared with the async keyword always returns a promise.
+
+
+async function fetchData() {
+  return "Data fetched";
+}
+
+fetchData().then(console.log); // Output: Data fetched
+
+
+
+
+ Error Handling with Try/Catch
+
+Using try...catch, you can handle errors more gracefully.
+
+
+async function fetchWithErrorHandling() {
+  try {
+    let response = await fetch("https://api.invalidurl.com");
+    let data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+}
+
+fetchWithErrorHandling();
+
+
+
+ Await Keyword
+
+The await keyword pauses the execution of an async function until the promise is resolved.
+
+
+
+async function getData() {
+  let response = await fetch("https://api.example.com/data");
+  let data = await response.json();
+  console.log(data);
+}
+
+getData();
